@@ -45,7 +45,8 @@ class Locators:
     TSHIRT_RED_SECOND_PRICE = (By.XPATH, '//*[@id="inventory_item_container"]/div/div/div[2]/div[3]')
     TSHIRT_RED_ADD = (By.ID, 'add-to-cart-test.allthethings()-t-shirt-(red)')
     NUMBER = (By. XPATH, '//*[@id="shopping_cart_container"]/a/span')
-
+    # NAVBAR
+    navbar = (By.ID, 'react-burger-menu-btn')
 
 class ItemsIDs:
     backpack_ID = 'id=4'
@@ -54,7 +55,6 @@ class ItemsIDs:
     jacket_ID = 'id=5'
     onesie_ID = 'id=2'
     tshirt_red_ID = 'id=3'
-
 
 
 class ProductsPage(BasePage):
@@ -207,3 +207,7 @@ class ProductsPage(BasePage):
     def tshirt_red_second_price(self):
         price = self.driver.find_element(*Locators.TSHIRT_RED_SECOND_PRICE)
         return price.text
+
+    def navbar_click(self):
+        el = self.driver.find_element(*Locators.navbar)
+        el.click()

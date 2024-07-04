@@ -4,6 +4,7 @@ from time import sleep
 from pages.home_page import HomePage
 from pages.products_page import ProductsPage
 from selenium.webdriver.chrome.options import Options
+from pages.navbar_page import NavbarPage
 
 
 class BaseTest(unittest.TestCase):
@@ -18,11 +19,12 @@ class BaseTest(unittest.TestCase):
         #self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(10)
         self.driver.maximize_window()
-        self.driver.get("https://www.saucedemo.com/")
+        self.driver.get('https://www.saucedemo.com/')
         self.home_page = HomePage(self.driver)
         self.products_page = ProductsPage(self.driver)
         self.count = ProductsPage(self.driver)
         self.backpack = ProductsPage(self.driver)
+        self.navbar_click = NavbarPage(self.driver)
 
 
     def testTest(self):

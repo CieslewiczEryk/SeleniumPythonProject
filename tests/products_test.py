@@ -74,6 +74,3 @@ class ProductsTest(BaseTest):
         self.second_price = self.products_page.tshirt_red_second_price()
         self.assertEqual(self.first_name, self.second_name)
         self.assertEqual(self.first_price, self.second_price)
-
-
-
