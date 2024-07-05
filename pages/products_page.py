@@ -1,7 +1,5 @@
 from pages.base_page import BasePage
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from time import sleep
 
 
 class Locators:
@@ -54,6 +52,7 @@ class Locators:
     LOGOUT = (By.ID, 'logout_sidebar_link')
     START_EL = (By.XPATH, '//*[@id="root"]/div/div[1]')
     RESET = (By.ID, 'reset_sidebar_link')
+
 
 class ItemsIDs:
     backpack_ID = 'id=4'

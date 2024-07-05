@@ -4,7 +4,6 @@ from time import sleep
 from pages.home_page import HomePage
 from pages.products_page import ProductsPage
 from selenium.webdriver.chrome.options import Options
-from pages.navbar_page import NavbarPage
 
 
 class BaseTest(unittest.TestCase):
@@ -16,7 +15,6 @@ class BaseTest(unittest.TestCase):
         chrome_options.add_argument("--incognito")
         self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.delete_all_cookies()
-        #self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(10)
         self.driver.maximize_window()
         self.driver.get('https://www.saucedemo.com/')
@@ -24,8 +22,6 @@ class BaseTest(unittest.TestCase):
         self.products_page = ProductsPage(self.driver)
         self.count = ProductsPage(self.driver)
         self.backpack = ProductsPage(self.driver)
-        self.navbar_click = NavbarPage(self.driver)
-
 
     def testTest(self):
         pass
