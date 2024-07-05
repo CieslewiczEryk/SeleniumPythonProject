@@ -16,8 +16,10 @@ class ProductsTest(BaseTest):
 
     def test_counting_items(self):
         """test zliczania ilosc rzeczy w koszyku"""
-        self.driver.delete_all_cookies()
-        sleep(3)
+
+        self.navbar_click = self.products_page.navbar_click()
+        self.reset = self.products_page.reset()
+        self.driver.refresh()
         self.count = self.products_page.add_product()
         self.assertEqual('6', self.products_page.produckts_number())
 

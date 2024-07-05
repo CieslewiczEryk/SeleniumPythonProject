@@ -246,3 +246,4 @@ class ProductsPage(BasePage):
 
     def reset(self):
         el = self.driver.find_element(*Locators.RESET)
+        el.click()
