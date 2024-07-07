@@ -15,15 +15,13 @@ class BaseTest(unittest.TestCase):
         chrome_options.add_argument("--incognito")
         self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.delete_all_cookies()
-        #self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(10)
         self.driver.maximize_window()
-        self.driver.get("https://www.saucedemo.com/")
+        self.driver.get('https://www.saucedemo.com/')
         self.home_page = HomePage(self.driver)
         self.products_page = ProductsPage(self.driver)
         self.count = ProductsPage(self.driver)
         self.backpack = ProductsPage(self.driver)
-
 
     def testTest(self):
         pass

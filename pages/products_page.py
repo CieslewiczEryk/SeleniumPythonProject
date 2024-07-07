@@ -1,7 +1,5 @@
 from pages.base_page import BasePage
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from time import sleep
 
 
 class Locators:
@@ -45,6 +43,15 @@ class Locators:
     TSHIRT_RED_SECOND_PRICE = (By.XPATH, '//*[@id="inventory_item_container"]/div/div/div[2]/div[3]')
     TSHIRT_RED_ADD = (By.ID, 'add-to-cart-test.allthethings()-t-shirt-(red)')
     NUMBER = (By. XPATH, '//*[@id="shopping_cart_container"]/a/span')
+    # NAVBAR
+    navbar = (By.ID, 'react-burger-menu-btn')
+    bar = (By. XPATH, '//*[@id="menu_button_container"]/div/div[2]')
+    ALL_ITEM = (By. ID, 'inventory_sidebar_link')
+    ABOUT = (By. ID, 'about_sidebar_link')
+    ABOUT_TITLE = (By. XPATH, '//*[@id="__next"]/div[2]/div[1]/div/div[1]/div[1]/div/div[4]/div[1]/a/button')
+    LOGOUT = (By.ID, 'logout_sidebar_link')
+    START_EL = (By.XPATH, '//*[@id="root"]/div/div[1]')
+    RESET = (By.ID, 'reset_sidebar_link')
 
 
 class ItemsIDs:
@@ -54,7 +61,6 @@ class ItemsIDs:
     jacket_ID = 'id=5'
     onesie_ID = 'id=2'
     tshirt_red_ID = 'id=3'
-
 
 
 class ProductsPage(BasePage):
@@ -207,3 +213,36 @@ class ProductsPage(BasePage):
     def tshirt_red_second_price(self):
         price = self.driver.find_element(*Locators.TSHIRT_RED_SECOND_PRICE)
         return price.text
+
+    def navbar_click(self):
+        el = self.driver.find_element(*Locators.navbar)
+        el.click()
+
+    def aria_hidden(self):
+        bar = self.driver.find_element(*Locators.bar)
+        aria_hid = bar.get_attribute('aria-hidden')
+        return aria_hid
+
+    def all_item(self):
+        el = self.driver.find_element(*Locators.ALL_ITEM)
+        el.click()
+
+    def about(self):
+        el = self.driver.find_element(*Locators.ABOUT)
+        el.click()
+
+    def about_title(self):
+        el = self.driver.find_element(*Locators.ABOUT_TITLE)
+        return el.text
+
+    def logout(self):
+        el = self.driver.find_element(*Locators.LOGOUT)
+        el.click()
+
+    def start_page(self):
+        el = self.driver.find_element(*Locators.START_EL)
+        return el.text
+
+    def reset(self):
+        el = self.driver.find_element(*Locators.RESET)
+        el.click()

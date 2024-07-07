@@ -21,7 +21,7 @@ class LoginTest(BaseTest):
         login_page = self.home_page.click_log_in()
         # wpisz niepoprawny username
         login_page.enter_username(self.test_data.user_name)
-        # wpisz niepoprawne haslo
+        # wpisz poprawne haslo
         login_page.enter_password(self.correct_data.correct_password)
         login_page.click_log_in()
         #sprawdz czy wyskakuje komunikat o niepoprawnym uzytkowniku

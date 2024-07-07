@@ -16,8 +16,10 @@ class ProductsTest(BaseTest):
 
     def test_counting_items(self):
         """test zliczania ilosc rzeczy w koszyku"""
-        self.driver.delete_all_cookies()
-        sleep(3)
+
+        self.navbar_click = self.products_page.navbar_click()
+        self.reset = self.products_page.reset()
+        self.driver.refresh()
         self.count = self.products_page.add_product()
         self.assertEqual('6', self.products_page.produckts_number())
 
@@ -75,5 +77,28 @@ class ProductsTest(BaseTest):
         self.assertEqual(self.first_name, self.second_name)
         self.assertEqual(self.first_price, self.second_price)
 
+    def test_navbar_roll(self):
+        "sprawdzanie rozwijania navbara"
+        self.navbar_click = self.products_page.navbar_click()
+        self.aria_hidden = self.products_page.aria_hidden()
+        self.assertEqual("false", self.aria_hidden)
 
+    def test_all_item(self):
+        self.navbar_click = self.products_page.navbar_click()
+        self.all_item = self.products_page.all_item()
+        self.assertEqual("Products", self.products_page.title())
 
+    def test_about(self):
+        self.navbar_click = self.products_page.navbar_click()
+        self.about = self.products_page.about()
+        self.assertEqual('Test it all. Free', self.products_page.about_title())
+
+    def test_log(self):
+        self.navbar_click = self.products_page.navbar_click()
+        self.logout = self.products_page.logout()
+        self.assertEqual('Swag Labs', self.products_page.start_page())
+
+    def test_reset(self):
+        self.navbar_click = self.products_page.navbar_click()
+        self.reset = self.products_page.reset()
+        self.assertEqual("Products", self.products_page.title())
