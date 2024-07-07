@@ -20,4 +20,5 @@ if you want to run a test, select the test you are interested in and click run
 
 Insert gif or link to demo
 
-[screen-capture.webm](https://github.com/CieslewiczEryk/SeleniumPythonProject/assets/154001161/4589c9a0-7a71-4500-9a80-25d32140fa65)
+[screen-capture (1).webm](https://github.com/CieslewiczEryk/SeleniumPythonProject/assets/154001161/73181e12-5ec3-45f9-aa37-989ffb242f9c)
+
